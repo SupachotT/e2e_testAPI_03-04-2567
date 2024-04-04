@@ -28,9 +28,10 @@
 							"    pm.expect(productName).to.eql(\"Balance Training Bicycle\");",
 							"});",
 							"",
-							"pm.test(\"ตรวจสอบ ID ของชื่อสินค้า 'Balance Training Bicycle'\", function () {",
-							"    let productName = jsonData.products[0].product_name;",
-							"    pm.expect(productName).to.eql(\"Balance Training Bicycle\");",
+							"pm.test(\"ตรวจสอบ ID ของชื่อสินค้า 'Balance Training Bicycle' เท่ากันกับ 1\", function () {",
+							"    let productID = jsonData.products[0].id;",
+							"    pm.expect(productID).to.eql(1);",
+							"    pm.collectionVariables.set(\"PRODUCT_ID\", productID);",
 							"});",
 							"",
 							"pm.test(\"ตรวจสอบ ราคาสินค้าของ Balance Training Bicycle ค่าเงิน USD ต้องเท่ากันกับ 119.95 USD\", function () {",
@@ -75,7 +76,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v1/product?q=Bicycle&offset=0&limit=20",
+					"raw": "{{BASE_URL}}/api/v1/product?q={{q}}&offset={{offset}}&limit={{limit}}",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -87,17 +88,17 @@
 					"query": [
 						{
 							"key": "q",
-							"value": "Bicycle",
+							"value": "{{q}}",
 							"description": "ค้นหาด้วยคำว่า \"Bicycle\""
 						},
 						{
 							"key": "offset",
-							"value": "0",
+							"value": "{{offset}}",
 							"description": "เริ่ม query ตั้งเเต่ ตัวที่ 1"
 						},
 						{
 							"key": "limit",
-							"value": "20",
+							"value": "{{limit}}",
 							"description": "Response กลับมาเเค่ 20 values"
 						}
 					]
@@ -233,7 +234,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v1/product/1",
+					"raw": "{{BASE_URL}}/api/v1/product/{{PRODUCT_ID}}",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -241,7 +242,7 @@
 						"api",
 						"v1",
 						"product",
-						"1"
+						"{{PRODUCT_ID}}"
 					]
 				}
 			},
@@ -525,6 +526,10 @@
 			"key": "BASE_URL",
 			"value": "http://188.166.247.72",
 			"type": "string"
+		},
+		{
+			"key": "orderBody",
+			"value": ""
 		}
 	]
 }
