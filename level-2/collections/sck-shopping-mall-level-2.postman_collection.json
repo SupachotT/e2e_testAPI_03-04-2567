@@ -28,9 +28,10 @@
 							"    pm.expect(productName).to.eql(\"Balance Training Bicycle\");",
 							"});",
 							"",
-							"pm.test(\"ตรวจสอบ ID ของชื่อสินค้า 'Balance Training Bicycle'\", function () {",
-							"    let productName = jsonData.products[0].product_name;",
-							"    pm.expect(productName).to.eql(\"Balance Training Bicycle\");",
+							"pm.test(\"ตรวจสอบ ID ของชื่อสินค้า 'Balance Training Bicycle' เท่ากันกับ 1\", function () {",
+							"    let productID = jsonData.products[0].id;",
+							"    pm.expect(productID).to.eql(1);",
+							"    pm.collectionVariables.set(\"PRODUCT_ID\", productID);",
 							"});",
 							"",
 							"pm.test(\"ตรวจสอบ ราคาสินค้าของ Balance Training Bicycle ค่าเงิน USD ต้องเท่ากันกับ 119.95 USD\", function () {",
@@ -233,7 +234,7 @@
 					}
 				],
 				"url": {
-					"raw": "{{BASE_URL}}/api/v1/product/1",
+					"raw": "{{BASE_URL}}/api/v1/product/{{PRODUCT_ID}}",
 					"host": [
 						"{{BASE_URL}}"
 					],
@@ -241,7 +242,7 @@
 						"api",
 						"v1",
 						"product",
-						"1"
+						"{{PRODUCT_ID}}"
 					]
 				}
 			},
