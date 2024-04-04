@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "d0141b2a-bdf9-4794-8d6d-22c81f07beb1",
+		"name": "Global_Variables",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3572919"
+	},
+	"item": [
+		{
+			"name": "calling_with_global_variable",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Set global variables\", function () {",
+							"    var jsonData = pm.response.json();",
+							"",
+							"    pm.globals.set(\"product_name\", jsonData.product_name);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://dminer.in.th/api/v1/product/{{id}}",
+					"protocol": "https",
+					"host": [
+						"dminer",
+						"in",
+						"th"
+					],
+					"path": [
+						"api",
+						"v1",
+						"product",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
