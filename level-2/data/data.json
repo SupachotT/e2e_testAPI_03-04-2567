@@ -1,0 +1,24 @@
+[
+    {
+    "cart_product_id": 1,
+    "cart_quantity": 1,
+    "burn_point": 0,
+    "sub_total_price": 4314.6,
+    "discount_price": 0,
+    "total_price": 4364.6,
+    "shipping_method_id": 1,
+    "shipping_address": "189/413 หมู่ 2",
+    "shipping_sub_district": "แพรกษาใหม่",
+    "shipping_district": "เมืองสมุทรปราการ",
+    "shipping_province": "สมุทรปราการ",
+    "shipping_zip_code": "10280",
+    "recipient_first_name": "พงศกร",
+    "recipient_last_name": "รุ่งเรืองทรัพย์",
+    "recipient_phone_number": "090912799",
+    "payment_method_id": 1,
+    "payment_info_card_name": "พงศกร รุ่งเรืองทรัพย์",
+    "payment_info_card_number": "4719 7005 9159 0995",
+    "payment_info_expire_date": "02/26",
+    "payment_info_cvv": "75"
+    }
+]
