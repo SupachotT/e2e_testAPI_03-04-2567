@@ -10,7 +10,7 @@ Makefile เป็นเหมือนคำสั่ง Shortcut สำหร�
 
 1. ค้นหา Powershell > คลิ๊กขวาเลือก Run as administrator
 2. ติดตั้ง [Chocoloatey](https://community.chocolatey.org/courses/installation/installing#powershell)
-
+3. Bypass Policy เพื่อหลีกเลี่ยงนโยบายเพื่อติดตั้งสิ่งต่าง ๆ
     ```sh
     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
     ```
